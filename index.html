@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="input.css" />
+    <title>Get Weather</title>
+  </head>
+  <body>
+    <div class="min-h-screen bg-slate-50">
+      <div
+        class="navbar bg-blue-200 text-2xl px-4 py-3 shadow-sm flex justify-between"
+      >
+        <div class="w-2/12 flex space-x-2 items-center">
+          <img src="./Images/icon.png" alt="logo" class="h-10 rounded-full" />
+        </div>
+        <div class="md:px-6 flex items-center">
+          <ul
+            class="-mt-52 text-white -mr-12 bg-blue-300 md:bg-opacity-0 md:flex md:space-x-6 md:text-blue-500 md:mt-0 md:mr-0 md:py-0 transition-all"
+            id="nav-items"
+          >
+            <li class="cursor-pointer px-6 py-2 border-b md:px-0 md:py-0">
+              Home
+            </li>
+            <li class="cursor-pointer px-6 py-2 border-b md:px-0 md:py-0">
+              About
+            </li>
+          </ul>
+          <div>
+            <img
+              src="./Images/ham.png"
+              alt="ham"
+              id="ham"
+              class="block md:hidden h-8 cursor-pointer"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="w-full py-6 px-4 flex justify-center items-center mt-2">
+        <div class="w-4/6 flex space-x-4">
+          <input
+            type="text"
+            class="w-10/12 p-2 rounded-lg text-xl bg-slate-50 shadow-md border border-blue-300 outline-blue-500"
+            id="city"
+            value="Mumbai"
+          />
+          <button
+            id="searchBt"
+            class="w-fit px-5 py-3 cursor-pointer text-xl md:text-2xl rounded-lg bg-blue-400 text-white shadow-md"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+      <div class="flex justify-center items-center px-5 py-5 mt-3">
+        <div class="w-full md:flex md:justify-around md:space-y-0">
+          <div
+            class="mx-auto w-5/6 md:mx-0 md:w-1/4 h-96 bg-slate-50 rounded-lg shadow-lg border border-gray-300 p-2"
+          >
+            <img src="./Images/temp.png" class="h-1/3 mx-auto mb-2" />
+            <hr />
+            <div class="py-4 px-2">
+              <table class="text-xl space-y-4">
+                <tr class="">
+                  <td class="px-3 py-3">Min Temprature</td>
+                  <td class="px-3 py-3">
+                    : <span class="px-4" id="minTemp"></span>
+                  </td>
+                </tr>
+                <tr class="">
+                  <td class="px-3 py-3">Max Temprature</td>
+                  <td class="px-3 py-3">
+                    : <span class="px-4" id="maxTemp"></span>
+                  </td>
+                </tr>
+                <tr class="">
+                  <td class="px-3 py-3">Sunrise</td>
+                  <td class="px-3 py-3">
+                    : <span class="px-4" id="sunRise"></span>
+                  </td>
+                </tr>
+                <tr class="">
+                  <td class="px-3 py-3">Sunset</td>
+                  <td class="px-3 py-3">
+                    : <span class="px-4" id="sunSet"></span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div
+            class="mx-auto w-5/6 md:mx-0 md:w-1/4 h-96 bg-slate-50 rounded-lg shadow-lg border border-gray-300"
+          >
+            <img src="./Images/wind.png" class="h-1/3 mx-auto mb-2" />
+            <hr />
+            <div class="py-4 px-2">
+              <table class="text-xl space-y-4">
+                <tr class="">
+                  <td class="px-3 py-3">Wind Speed</td>
+                  <td class="px-3 py-3">
+                    : <span class="px-4" id="windSpeed"></span>
+                  </td>
+                </tr>
+                <tr class="">
+                  <td class="px-3 py-3">Wind Direction</td>
+                  <td class="px-3 py-3">
+                    : <span class="px-4" id="windDir"></span>
+                  </td>
+                </tr>
+                <tr class="">
+                  <td class="px-3 py-3">Air Quality</td>
+                  <td class="px-3 py-3">
+                    : <span class="px-4" id="airQuality"></span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div
+            class="mx-auto w-5/6 md:mx-0 md:w-1/4 h-96 bg-slate-50 rounded-lg shadow-lg border border-gray-300"
+          >
+            <img src="./Images/cloud.png" class="h-1/3 mx-auto mb-2" />
+            <hr />
+            <div class="py-4 px-2">
+              <table class="text-xl space-y-4">
+                <tr class="">
+                  <td class="px-3 py-3">Cloud Cover</td>
+                  <td class="px-3 py-3">
+                    : <span class="px-4" id="cloudCover"></span>
+                  </td>
+                </tr>
+                <tr class="">
+                  <td class="px-3 py-3">Rain Probablity</td>
+                  <td class="px-3 py-3">
+                    : <span class="px-4" id="rainProb"></span>
+                  </td>
+                </tr>
+                <tr class="">
+                  <td class="px-3 py-3">Rain</td>
+                  <td class="px-3 py-3">
+                    : <span class="px-4" id="rain"></span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
